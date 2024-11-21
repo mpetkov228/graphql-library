@@ -104,6 +104,15 @@ const typeDefs = `
     ): [Book!]!
     allAuthors: [Author!]!
   }
+
+  type Mutation {
+    addBook(
+      title: String!
+      author: String!
+      published: Int!
+      genres: [String!]!
+    ): Book!
+  }
 `;
 
 const resolvers = {
@@ -136,6 +145,11 @@ const resolvers = {
         }
       });
       return count;
+    }
+  },
+  Mutation: {
+    addBook: (root, args) => {
+    
     }
   }
 };
